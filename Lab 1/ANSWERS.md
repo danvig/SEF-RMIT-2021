@@ -1,0 +1,9 @@
+#### 3A) Read the classes Student and StudentListener. Do they need any type of refactoring? Explain your reasoning on what you would do. ####
+There are no major complications with the provided code and the only real changes needed are formatting changes and renaming some of the variables. There are a lot of empty lines between sections of the code that serve no purpose so I'll start by removing those lines which will in turn reduce the line count and thus fixing some of the formatting issues. In methods where private variables are used, I'll add the "this" keyword on the private variables as it is proper procedure in Java to use that keyword to distinguish the variables so it's easier for others and compilers to understand. I'll rearrange certain methods to be grouped together to follow proper procedure. Next, I'll change some the variables names so they are easier to understand to others who view the code and I'll finish by adding some brief comments to the code to explain what it does.
+
+#### 3B) How many commits were made by the tutor to set up the assignment? ####
+By using the "git log --pretty=fuller" command. I was able to get a log of all the commits made in the repository in a readable, easy to understand format with the author, date of the commit, and the commit message. I could see my commit from Step 2 was the most recent commit, and there were two commits before that completed by the tutor (github-classroom[bot]).
+
+These commits were the initial commit and the commit that initialised the master branch. I submitted these changes but then realised I forgot to check commits in the develop branch, so I swapped to the develop branch and used the same command to check the commits for that branch. The "github-classroom[bot]" made one commit for the initial commit.
+
+Thus, the tutor made three commits to setup the assignment across both branches.

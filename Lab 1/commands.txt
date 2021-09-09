@@ -1,0 +1,172 @@
+Last login: Tue Mar 23 14:02:55 on console
+danielviglietti@Daniels-MacBook-Air Lab 1 % bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ history -c
+bash-3.2$ exit
+exit
+danielviglietti@Daniels-MacBook-Air Lab 1 % bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ git clone https://github.com/sef-2021-s1/lab-1-individual-danvig
+Cloning into 'lab-1-individual-danvig'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 21 (delta 5), reused 15 (delta 1), pack-reused 0
+Unpacking objects: 100% (21/21), done.
+bash-3.2$ git branch
+fatal: Not a git repository (or any of the parent directories): .git
+bash-3.2$ ls
+lab-1-individual-danvig
+bash-3.2$ cd lab-1-individual-danvig
+bash-3.2$ git branch
+* develop
+bash-3.2$ git pull --all
+Fetching origin
+Already up to date.
+bash-3.2$ git branch
+* develop
+bash-3.2$ git checkout master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Switched to a new branch 'master'
+bash-3.2$ git merge develop
+fatal: refusing to merge unrelated histories
+bash-3.2$ --allow unrelated histories
+bash: --allow: command not found
+bash-3.2$ --allow-unrelated-histories
+bash: --allow-unrelated-histories: command not found
+bash-3.2$ git merge develop --allow-unrelated-histories
+Auto-merging src/main/java/startpoint/StudentListener.java
+CONFLICT (add/add): Merge conflict in src/main/java/startpoint/StudentListener.java
+Auto-merging src/main/java/startpoint/Student.java
+CONFLICT (add/add): Merge conflict in src/main/java/startpoint/Student.java
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+bash-3.2$ git add -A
+bash-3.2$ git commit -m "Resolved merge conflicts by editing files to match the develop branch"
+[master 037d268] Resolved merge conflicts by editing files to match the develop branch
+bash-3.2$ git push origin master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 582 bytes | 582.00 KiB/s, done.
+Total 7 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/sef-2021-s1/lab-1-individual-danvig
+   4f1b5fa..037d268  master -> master
+bash-3.2$ git push --all
+Everything up-to-date
+bash-3.2$ git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ ls
+ANSWERS.md	README.md	pom.xml		src
+bash-3.2$ pico ANSWERS.md
+bash-3.2$ git log --pretty=fuller
+commit 037d268045fcffc996c103311bc77e99ab60898d (HEAD -> master, origin/master)
+Merge: 4f1b5fa 8be4d4a
+Author:     danvig <62083658+danvig@users.noreply.github.com>
+AuthorDate: Tue Mar 23 15:19:01 2021 +1100
+Commit:     danvig <62083658+danvig@users.noreply.github.com>
+CommitDate: Tue Mar 23 15:19:01 2021 +1100
+
+    Resolved merge conflicts by editing files to match the develop branch
+
+commit 4f1b5fa4f1e8462304d02f65aa99c02690373c3e
+Author:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+AuthorDate: Sun Mar 21 21:06:33 2021 +0000
+Commit:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+CommitDate: Sun Mar 21 21:06:33 2021 +0000
+
+    Initialize master
+
+commit 8be4d4a35bf9f03467a95f6e17764b7c61e80b7d (origin/develop, origin/HEAD, develop)
+Author:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+AuthorDate: Sun Mar 21 21:06:32 2021 +0000
+Commit:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+CommitDate: Sun Mar 21 21:06:32 2021 +0000
+
+    Initial commit
+bash-3.2$ git add -A
+bash-3.2$ git commit -m "Answers the step 3 questions and updates the Answers file"
+[master f638f6d] Answers the step 3 questions and updates the Answers file
+ 1 file changed, 7 insertions(+)
+bash-3.2$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.04 KiB | 1.04 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sef-2021-s1/lab-1-individual-danvig
+   037d268..f638f6d  master -> master
+bash-3.2$ git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+bash-3.2$ git log --pretty=fuller
+commit 8be4d4a35bf9f03467a95f6e17764b7c61e80b7d (HEAD -> develop, origin/develop, origin/HEAD)
+Author:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+AuthorDate: Sun Mar 21 21:06:32 2021 +0000
+Commit:     github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+CommitDate: Sun Mar 21 21:06:32 2021 +0000
+
+    Initial commit
+bash-3.2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ git add -A
+bash-3.2$ git commit -m "Updates the Anwsers file with new changes"
+[master 69a7ec1] Updates the Anwsers file with new changes
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+bash-3.2$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 507 bytes | 507.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/sef-2021-s1/lab-1-individual-danvig
+   f638f6d..69a7ec1  master -> master
+bash-3.2$ git branch refactoring
+bash-3.2$ git checkout refactoring
+Switched to branch 'refactoring'
+bash-3.2$ git add -A
+bash-3.2$ git commit -m "Completes and updates the refactored java files"
+[refactoring 94307ee] Completes and updates the refactored java files
+ 2 files changed, 26 insertions(+), 33 deletions(-)
+bash-3.2$ git push origin refactoring
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 1.16 KiB | 1.16 MiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'refactoring' on GitHub by visiting:
+remote:      https://github.com/sef-2021-s1/lab-1-individual-danvig/pull/new/refactoring
+remote: 
+To https://github.com/sef-2021-s1/lab-1-individual-danvig
+ * [new branch]      refactoring -> refactoring
+bash-3.2$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+bash-3.2$ git add ANSWERS.md
+bash-3.2$ git commit -m "Updates answer for Question 3A"
+[master 4a85239] Updates answer for Question 3A
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+bash-3.2$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 420 bytes | 420.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/sef-2021-s1/lab-1-individual-danvig
+   69a7ec1..4a85239  master -> master
+bash-3.2$ 
